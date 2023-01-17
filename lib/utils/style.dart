@@ -18,6 +18,22 @@ final sOnboardingScreenSmallTextStyle = GoogleFonts.ubuntu(
   ),
 );
 
+final sLoginScreenBigTextStyle = GoogleFonts.ubuntu(
+  textStyle: const TextStyle(
+    fontWeight: FontWeight.w500,
+    fontSize: 24,
+    color: kBigText
+  ),
+);
+
+final sLoginScreenSmallTextStyle = GoogleFonts.ubuntu(
+  textStyle: const TextStyle(
+    fontWeight: FontWeight.w400,
+    fontSize: 16.0,
+    color: kSmallText,
+  ),
+);
+
 final sButtonTextStyle = GoogleFonts.ubuntu(
   textStyle: const TextStyle(
     fontWeight: FontWeight.w500,

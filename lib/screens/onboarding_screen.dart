@@ -7,6 +7,7 @@ import 'package:chow_food_delivery_app/utils/style.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../components/routes.dart';
 import '../components/size_helpers.dart';
 import '../utils/assets.dart';
 
@@ -61,9 +62,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 horizontal: 30,
                 vertical: 20
               ),
-            child: secondaryBUtton(
+            child: secondaryButton(
               text: "Get Started",
-              onClick: () {},
+              onClick: () => Navigator.pushNamed(context, Routes.login),
               fillColor: kPrimaryColor,
               textColor: Colors.white,
             )
@@ -71,14 +72,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             height: 90,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Center(
-                  child: SmoothPageIndicator(
+                InkWell(
+                  child: Text(
+                    'Skip',
+                    style: sButtonTextStyle,
+                  ),
+                  onTap: () => controller.jumpToPage(2),
+                ),
+                SmoothPageIndicator(
                     controller: controller,
                     count: 3,
                     effect: const WormEffect(
                       spacing: 12,
+                      dotWidth: 17,
+                      dotHeight: 8,
                       dotColor: kDotColor,
                       activeDotColor: kActiveDotColor,
                     ),
@@ -88,17 +97,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         curve: Curves.easeIn
                     ),
                   ),
-                ),
-                InkWell(
-                  child: Text(
-                    'Skip',
-                    style: sButtonTextStyle,
-                  ),
-                  onTap: () => controller.jumpToPage(2),
-                ),
-                const Spacer(
-                  flex: 1,
-                ),
                 primaryButton(
                     text: 'Next',
                     onClick: () {},
